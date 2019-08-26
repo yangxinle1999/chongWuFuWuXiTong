@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--配置Mybatis过程-->
+    <context:component-scan base-package="com.dao"/><!--主要针对dao层扫描-->
+    <!--1：配置数据库的相关参数-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--2配置链接池-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <!--配置c3p0的私有变量-->
+        <property name="maxPoolSize" value="30"/><!--设置连接池的最大链接对象-->
+        <property name="minPoolSize" value="10"/><!--设置链接池的最小链接对象-->
+        <property name="autoCommitOnClose" value="false"/>
+        <property name="checkoutTimeout" value="1000"/><!--链接超时时间-->
+        <property name="acquireRetryAttempts" value="2"/><!--超时重试的次数-->
+    </bean>
+    <!--3配置sqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--注入链接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--配置Mybatis的全局配置文件：MybatisConfig-->
+        <property name="configLocation" value="classpath:mybatisconfiger.xml"/>
+        <!--扫描实体层包，使用别名-->
+        <property name="typeAliasesPackage" value="cn.edu.heuet.*"/>
+        <!--扫描配置sql配置文件 mapper-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+    <!--4配置dao层接口，实现动态实现接口，注入到spring的容器中-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--注入sqlSessionFactory-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!--给出需要扫描的dao接口的包-->
+        <property name="basePackage" value="com.dao"/><!--dao层的包与mapper文件一一对应-->
+    </bean>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"><!-- 文件上传解析器-->
+        <property name="maxUploadSize" value="10485760"></property><!-- 上传图片的最大尺寸 10M-->
+        <property name="defaultEncoding" value="utf-8"></property><!-- 默认编码 -->
+    </bean>
+</beans>

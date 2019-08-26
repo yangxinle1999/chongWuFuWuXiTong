@@ -1,0 +1,139 @@
+body,div,input,label{ padding:0; margin:0; text-decoration:none;}
+.bkg{
+    position:absolute;
+    height:100vh;
+    width:100%;
+    background-image:url('../images/4.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.login{
+    height:800px;
+    width:700px;
+    border-radius:15px;
+    background:rgba(216,216,216,0.5);
+    text-align:center;
+    overflow:hidden;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.login img{
+    position: relative;
+    top: 230px;
+    left: 0;
+}
+.login a{
+    position: relative;
+    top: 240px;
+    left: 0;
+}
+.login input{
+    margin-left:20px;
+    border-radius:6px;
+    outline:none;
+    border:1px solid rgba(0,0,0,0.5);
+    padding:5px;
+    -webkit-background-clip:padding-box;
+    background-clip:padding-box;
+    background:rgba(216,216,216,0.4);
+}
+.login_header{
+    color:#565656;
+    font-size:30px;
+    position:relative;
+    top:80px;
+    left:0;
+}
+.login_name{
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:100px;
+    right: 73px;
+}
+#nn{
+    width: 170px;
+}
+#ss{
+    display: block;
+    position: relative;
+    top: 70px;
+    left: 120px;
+}
+.login_num{
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:100px;
+    left:0;
+}
+.login_password{
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:120px;
+    left:0;
+}
+.login_sex{
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:140px;
+    left:0;
+}
+.login_age{
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:160px;
+    left:0;
+}
+.login_grade{
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:180px;
+    left:0;
+}
+.login_QQ{
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:200px;
+    left:0;
+    margin-left: 20px;
+}
+.login_yanz{
+    width: 170px;
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:220px;
+    right:84px;
+}
+#zz{
+    display: block;
+    position: relative;
+    top: 190px;
+    left: 103px;
+}
+.login_check{
+    width: 420px;
+    font-size:25px;
+    color:#565656;
+    position:relative;
+    top:240px;
+    right:4px;
+}
+.zhuce{
+    height:40px;
+    width:120px;
+    font-size:30px;
+    color:#565656;
+    position:relative;
+    top:260px;
+    left:0;
+    cursor:pointer;
+}

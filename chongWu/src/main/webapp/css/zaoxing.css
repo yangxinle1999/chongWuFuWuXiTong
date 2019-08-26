@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/a.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#zaoxing {
+    height: 700px;
+    width: 978px;
+    background: rgba(216, 216, 216, 0.5);
+    position: relative;
+}
+#header{
+    font-size: 30px;
+    color: #D4CCC9;
+    position: absolute;
+    top: -60px;
+    left: 429px;
+}
+#fuwu{
+    margin: 50px auto;
+}
+#fuwu tr{
+    display: block;
+    height: 40px;
+    width: 100%;
+}
+#fuwu td{
+    padding: 0 10px;
+}
+#fuwu select{
+    height: 37px;
+    width: 292px;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(216,216,216,0.5);
+    cursor: pointer;
+}
+#tijiao{
+    margin-top: 250px;
+}
+#tijiao input{
+    font-size: 18px;
+    height: 40px;
+    width: 90px;
+    margin-left: 164px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: rgba(216,216,216,0.5);
+}

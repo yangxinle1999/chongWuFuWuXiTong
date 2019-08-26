@@ -1,0 +1,69 @@
+html,body{
+    height: 100%;
+}
+body{
+    margin: 0;
+    text-align: center;
+}
+#bkg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url("../images/13.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#jiaoliu{
+    height: 300px;
+    width: 666px;
+    background: rgba(216,216,216,0.5);
+    margin: 0 auto;
+    position: relative;
+    top: 10%;
+    left: 0;
+    border-radius: 5px;
+}
+#jiaoliu img{
+    float: left;
+    position: relative;
+    top: 15px;
+    left: 15px;
+}
+#jiaoliu textarea{
+    height: 157px;
+    width: 620px;
+    background: rgba(216,216,216,0.5);
+    outline: none;
+    border: none;
+    padding: 9px;
+    color: #757575;
+    font-size: 15px;
+    position: relative;
+    top: 30px;
+    resize: none;
+}
+#jiaoliu input{
+    height: 34px;
+    width: 100px;
+    background: #FF8000;
+    cursor: pointer;
+    position: relative;
+    top: 45px;
+    left: 275px;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 15px;
+}
+#jiaoliu textarea[placeholder]{
+    color: #000000;
+}
+#content{
+    height: 623px;
+    width: 666px;
+    background: rgba(216,216,216,0.5);
+    margin: 0 auto;
+    position: relative;
+    top: 160px;
+}

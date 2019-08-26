@@ -1,0 +1,45 @@
+body,div,table{ margin: 0; padding: 0; text-decoration: none;}
+body{
+    text-align: center;
+}
+#bigbox{
+    background-image:url('../images/12.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#shouyang{
+    font-size: 30px;
+    color: #483A1F;
+}
+#biaoge{
+    font-size: 15px;
+    color:blue;
+    height: 779px;
+    width: 1364px;
+    border-radius: 15px;
+    margin: 100px auto;
+    background:rgba(216,216,216,0.5);
+}
+#biaoge input{
+    background:none;
+    font-size: 15px;
+    color: black;
+    outline: none;
+    border:1px solid rgba(0,0,0,0.5);
+    cursor: pointer;
+    text-align: center;
+}
+#sss{
+    font-size: 15px;
+    color: black;
+    background-color: #A0957C;
+    outline: none;
+    border:1px solid rgba(0,0,0,0.5);
+    cursor: pointer;
+    border-radius: 10px;
+}

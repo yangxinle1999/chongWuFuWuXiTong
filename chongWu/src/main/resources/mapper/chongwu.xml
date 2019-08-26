@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.chongwu">
+    <select id="selectbyname" resultType="com.entity.userdetail">
+        select * from userdetail where name =#{name}
+    </select>
+    <select id="selectbynameandpas" resultType="com.entity.userdetail">
+        select * from userdetail where name =#{name} and password=#{password}
+    </select>
+    <insert id="charu" parameterType="com.entity.userdetail">
+        insert into userdetail(name,num,password,sex,age,grade,pimage) values (#{name},#{num},#{password},#{sex},#{age},#{grade},#{pimage})
+    </insert>
+    <update id="update" parameterType="com.entity.userdetail">
+       update userdetail
+       <set>
+           password=#{password},
+           <if test="num!=null and num!=''">
+               num=#{num},
+           </if>
+           <if test="grade!=null and grade!=''">
+               grade=#{grade},
+           </if>
+       </set>
+       where name=#{name}
+    </update>
+    <insert id="insert1" parameterType="com.entity.petJiYang">
+        insert into petjiyang(petCateGory,petName,petTrick,petTime,jiYangRenMing,tel)
+        values (#{petCateGory},#{petName},#{petTrick},#{petTime},#{jiYangRenMing},#{tel})
+    </insert>
+    <select id="list" resultType="com.entity.petJiYang" >
+        select * from petjiyang
+    </select>
+    <insert id="insert2" parameterType="com.entity.petShouYang">
+        insert into petshouyang(shouYangRenMing,petCateGory,petName,petTrick,petTime,jiYangRenMing,tel)
+        values (#{shouYangRenMing},#{petCateGory},#{petName},#{petTrick},#{petTime},#{jiYangRenMing},#{tel})
+    </insert>
+    <select id="selectShouYang" resultType="com.entity.petJiYang">
+        select * from petshouyang where shouYangRenMing=#{shouYangRenMing}
+    </select>
+    <select id="xuYuangQiang" resultType="com.entity.xuYuanQiang">
+        select * from xuYuanQiang
+    </select>
+    <insert id="xuYuanQiangChaRu" parameterType="com.entity.xuYuanQiang">
+        insert into xuyuanqiang(name ,content,time ) values (#{name},#{content},#{time})
+    </insert>
+    <insert id="jiaoLiu" parameterType="com.entity.jiaoLiu">
+        insert into jiaoLiu(name,content,time ) values (#{name},#{content},now())
+    </insert>
+    <select id="listJiaoLiu" resultType="com.entity.jiaoLiu">
+        select * from jiaoLiu
+    </select>
+    <select id="selectPimage" resultType="com.entity.userdetail">
+        select * from userdetail where name =#{name}
+    </select>
+    <select id="selectMoney" resultType="com.entity.money" parameterType="String">
+        select * from money where time=(select max(time) from money where name=#{name})
+    </select>
+    <insert id="insertWenJian">
+        insert into wenjian(name ,wenjian) values (#{name},#{wenjian})
+    </insert>
+    <select id="selectWenJian" resultType="com.entity.wenjian">
+        select * from wenjian where name =#{name}
+    </select>
+    <select id="selectDuoWenJian" resultType="com.entity.wenjian">
+        select * from wenjian
+    </select>
+   <insert id="insertMoney" parameterType="com.entity.money">
+       insert into money(name ,jiaoyijine,yue,fuwuleixing,time ) values (#{name},#{jiaoyijine},#{yue},#{fuwuleixing},now())
+   </insert>
+    <select id="selectM" resultType="com.entity.money">
+        select * from money where name=#{name}
+    </select>
+    <select id="shouyangchaxun" parameterType="com.entity.petShouYang" resultType="com.entity.petShouYang">
+        select * from petshouyang where jiYangRenMing=#{jiYangRenMing} and petTime=#{petTime} and petTrick=#{petTrick} and petName=#{petName} and petCateGory=#{petCateGory}
+    </select>
+    <insert id="insertSell" parameterType="com.entity.shoumaixinxi">
+        insert into shoumaixinxi(name,chongWuLeiBie,chongWuAge,address,price,tel,image) values (#{name},#{chongWuLeiBie},#{chongWuAge},#{address},#{price},#{tel},#{image})
+    </insert>
+    <select id="shoumaixinxilist" resultType="com.entity.shoumaixinxi">
+        select * from shoumaixinxi
+    </select>
+    <select id="selectShouMaiById" resultType="com.entity.shoumaixinxi">
+        select * from shoumaixinxi where id=#{id}
+    </select>
+    <update id="updateDianJiLiang" parameterType="com.entity.shoumaixinxi">
+        update shoumaixinxi set dianjiliang=#{dianjiliang} where id=#{id}
+    </update>
+    <insert id="insertMoney2" parameterType="com.entity.money">
+        insert into money (name ,jiaoyijine,yue,time,suogouchongwu) values (#{name},#{jiaoyijine},#{yue},now(),#{suogouchongwu})
+    </insert>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE configuration
+                PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<settings>
+    <!--使用jdbc的getGeneratedKeys获取数据库自增主键值-->
+    <setting name="useGeneratedKeys" value="true"/>
+    <!--使用别名替换列明-->
+    <!--select name as title from table-->
+    <setting name="useColumnLabel" value="true"/>
+    <!--开启驼峰命名转化Table(crete_time)->model(createtime)-->
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+    <setting name="cacheEnabled" value="true"/>
+</settings>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"><!--加上分页的插件-->
+        </plugin>
+    </plugins>
+</configuration>

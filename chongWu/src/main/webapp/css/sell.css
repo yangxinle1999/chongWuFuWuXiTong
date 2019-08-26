@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F7F7F7;
+}
+#sell{
+    height: 664px;
+    width: 507px;
+    background: rgba(225,225,225,0.5);
+}
+#content{
+    height: 360px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 18px;
+}
+#content tr{
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin-top: 50px;
+}
+#content tr td{
+    height: 40px;
+    width: 115px;
+}
+#content1 input{
+    cursor: pointer;
+}
+#content2 input{
+    height: 36px;
+    width: 82px;
+    outline: none;
+}
+#content3 input{
+    height: 36px;
+    width: 82px;
+    padding: 0 2px;
+    outline: none;
+}
+#tijiao{
+    height: 40px;
+    width: 95px;
+    background: #FF6600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    margin: 50px 0 0 206px;
+}
